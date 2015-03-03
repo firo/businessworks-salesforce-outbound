@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SFDC
+Bundle-SymbolicName: SFDC
+Bundle-Version: 1.1.0.qualifier
+Bundle-Vendor: Ferruccio Irionè
+TIBCO-BW-Application: META-INF/TIBCO.xml
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-Version: 6.2.0 V25 2014-10-31

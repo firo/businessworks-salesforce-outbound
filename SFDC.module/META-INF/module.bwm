@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:outbound="http://soap.sforce.com/2005/09/outbound" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_paHgAMD0EeSPas1lcYb7KQ" targetNamespace="http://tns.tibco.com/bw/composite/SFDC.module" name="SFDC.module" compositeext:version="1.0.0" compositeext:description="SFDC Outbound integration - Contacts update" compositeext:formatVersion="2">
+  <sca:service xmi:id="_QDeesMEyEeSe6Y6s-Pi7wQ" name="NotificationPort" promote="ComponentProcess/NotificationPort">
+    <sca:interface.wsdl xmi:id="_QDnBkMEyEeSe6Y6s-Pi7wQ" interface="http://soap.sforce.com/2005/09/outbound#wsdl.interface(NotificationPort)" scaext:wsdlLocation="../Service%20Descriptors/sfdc_outbound.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_TMv8wMEyEeSe6Y6s-Pi7wQ" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/3a32b4ce7fa6427ba249ea1790a23d9f/SOAPServiceBinding" portTypeQName="outbound:NotificationPort" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.1.0">
+      <bindingType xmi:id="_TM4foMEyEeSe6Y6s-Pi7wQ"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_Wu5N0MEyEeSe6Y6s-Pi7wQ" endpointURI="/SOAPServiceBinding/notificationPort/" httpConnector="sfdc.module.HTTPConnectorResource"/>
+      <operationConfiguration xmi:id="_TM6U0MEyEeSe6Y6s-Pi7wQ" operationName="notifications" action="notifications" actionNeeded="true">
+        <bindingType xmi:id="_TM6U0cEyEeSe6Y6s-Pi7wQ"/>
+        <messageConfiguration xmi:id="_TM6U0sEyEeSe6Y6s-Pi7wQ" messageQName="outbound:notificationsRequest">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_TM6U08EyEeSe6Y6s-Pi7wQ" partName="request"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_TM6U1MEyEeSe6Y6s-Pi7wQ" messageQName="outbound:notificationsResponse" messageDirection="OUTPUT">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_TM6U1cEyEeSe6Y6s-Pi7wQ" partName="response"/>
+        </messageConfiguration>
+        <context xmi:id="_TM674MEyEeSe6Y6s-Pi7wQ">
+          <inputMapping xmi:id="_TM674cEyEeSe6Y6s-Pi7wQ"/>
+          <outputMapping xmi:id="_TM674sEyEeSe6Y6s-Pi7wQ" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_TM7i8MEyEeSe6Y6s-Pi7wQ" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_ph_CkMD0EeSPas1lcYb7KQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_piCs8MD0EeSPas1lcYb7KQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_piGXUMD0EeSPas1lcYb7KQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_piKBsMD0EeSPas1lcYb7KQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_piNsEMD0EeSPas1lcYb7KQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_piR9gMD0EeSPas1lcYb7KQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_piVn4MD0EeSPas1lcYb7KQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_piZSQMD0EeSPas1lcYb7KQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_pic8oMD0EeSPas1lcYb7KQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_NY0PQMEyEeSe6Y6s-Pi7wQ" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_NY02UMEyEeSe6Y6s-Pi7wQ" processName="sfdc.module.Process"/>
+    <sca:service xmi:id="_QDa0UMEyEeSe6Y6s-Pi7wQ" name="NotificationPort">
+      <sca:interface.wsdl xmi:id="_QDcCcMEyEeSe6Y6s-Pi7wQ" interface="http://soap.sforce.com/2005/09/outbound#wsdl.interface(NotificationPort)" scaext:wsdlLocation="../Service%20Descriptors/sfdc_outbound.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>
